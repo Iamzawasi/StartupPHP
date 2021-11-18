@@ -67,11 +67,19 @@
         //     print "this Vehicle is {$this->brand_Name}.";
 
         // }
-
-
+    }
+    class motorcycle extends vehicle{
+        public $engine;
+       function __construct($engine, $brand_Name, $brand_Year, $color, $price){
+            parent::__construct($brand_Name, $brand_Year, $color, $price);
+            $this->engine=$engine;
+        }
+        function printEngine(){
+            echo "The engine is {$this->engine}";
+        }
     }
     
-    $camery=new vehicle("Camery", "2011", "White", "$22,000" );
+    $camery=new motorcycle("170cc", "Honda", "2011", "White", "$22,000" );
     $corolla=new vehicle("Corolla", "1996", "Golden", "$12,000" );
    
     foreach($camery as $object_content){
